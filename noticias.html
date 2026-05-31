@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lector de Noticias</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <header class="encabezado">
+        <h1>📰 Noticias del Día</h1>
+        <p>Mantente informado con las últimas noticias</p>
+    </header>
+
+    <main class="contenedor-principal">
+        <div class="barra-controles">
+            <button id="btnRefrescar" class="boton-refrescar">🔄 Refrescar Noticias</button>
+            <select id="categoria" class="selector-categoria">
+                <option value="technology">Tecnología</option>
+                <option value="business">Negocios</option>
+                <option value="health">Salud</option>
+                <option value="sports">Deportes</option>
+                <option value="entertainment">Entretenimiento</option>
+            </select>
+        </div>
+
+        <div id="cargando" class="cargando" style="display: none;">Cargando noticias...</div>
+        <div id="error" class="error" style="display: none;"></div>
+        <div id="contenedor-noticias" class="contenedor-noticias"></div>
+    </main>
+
+    <!-- Modal para leer noticia completa -->
+    <div id="modal" class="modal" style="display: none;">
+        <div class="modal-contenido">
+            <span id="cerrarModal" class="cerrar">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <script src="logica.js"></script>
+</body>
+</html>
