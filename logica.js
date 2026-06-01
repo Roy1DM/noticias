@@ -1,6 +1,6 @@
 // CONFIGURACIÓN - GNews funciona en GitHub Pages (NewsAPI no)
 const API_KEY = 'd9f1dff045f7a9a86aa6ecf9eec2ea24'; // Tu API key de gnews.io
-const API_URL = 'https://gnews.io/api/v4/search';
+const API_URL = 'https://gnews.io/api/v4/top-headlines';
 
 // Variables
 let categoriaActual = 'technology';
@@ -36,7 +36,7 @@ async function cargarNoticias() {
 
     try {
         const respuesta = await fetch(
-            `${API_URL}?q=${categoriaActual}&lang=es&token=${API_KEY}`
+            `${API_URL}?category=${categoriaActual}&lang=es&max=10&token=${API_KEY}`
         );
 
         if (!respuesta.ok) {
